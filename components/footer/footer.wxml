@@ -1,0 +1,3 @@
+<!--components/footer/footer.wxml-->
+<text>底部组件</text>
+<view class="userName" bindtap="sendMsg">{{ username }}</view>

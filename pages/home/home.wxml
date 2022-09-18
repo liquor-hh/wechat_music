@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="header">网易云音乐</view>
+  <view class="search_box">
+    <input class="search" type="text" placeholder="搜索歌曲"/>
+    <image class="search_icon"></image>
+  </view>
+  <!-- 列表 -->
+  <view class="list_box">
+    <view class="list_item" wx:for="{{ list }}" wx:key="id">
+      <view class="img_box">
+        <image src="{{ item.coverImgUrl }}"></image>
+      </view>
+      <view class="song_list">
+        <view class="song_item" wx:for="{{ item.tracks }}" wx:key="index">
+          <view></view>
+          <view>{{ item.first }}-{{ item.second }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

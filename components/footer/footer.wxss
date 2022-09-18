@@ -1,0 +1,5 @@
+/* components/footer/footer.wxss */
+.userName {
+  font-size: 20px;
+  color: red;
+}
