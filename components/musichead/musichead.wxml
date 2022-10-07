@@ -1,0 +1,8 @@
+<view class="header_container">
+  <view class="icon_box">
+    
+  </view>
+  <view class="header_title">
+    {{ title }}
+  </view>
+</view>

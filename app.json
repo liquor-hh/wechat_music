@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/home/home",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -8,7 +9,8 @@
     "navigationBarTitleText": "微信",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "usingComponents": {}
+  "usingComponents": {
+    "musichead": "/components/musichead/musichead"
+  }
 }

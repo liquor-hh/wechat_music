@@ -50,7 +50,7 @@ App({
             console.log(res);
             // 其他异常情况（成功的），将后台返回的提示信息告诉用户
             wx.showToast({
-              title: res.data.msg,
+              title: res.data.meesageToUser,
               icon: 'none'
             })
           }
@@ -66,6 +66,6 @@ App({
   // 每一个请求地址都包括域名，所以域名可以存放到公共变量中
   globalData: {
     userInfo: null,
-    baseURL: 'http://localhost:3000'
+    baseURL: 'http://43.142.240.214:3001'
   }
 })

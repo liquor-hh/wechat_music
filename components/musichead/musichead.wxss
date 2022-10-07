@@ -1,0 +1,23 @@
+.header_container {
+  position: relative;
+  width: 10px;
+  height: 150rpx;
+}
+.header_container .header_title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.icon_box {
+  width: 180rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+.black_icon {
+  background-color: #fff;
+  color: #000;
+}
+.white_icon {
+  background-color: #000;
+  color: #fff;
+}

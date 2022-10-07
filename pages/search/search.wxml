@@ -1,0 +1,63 @@
+<view class="container"> 
+  <musichead title="搜索" iconShow="{{ true }}"></musichead>
+  <view class="search_box">
+    <input type="text" placeholder="搜索歌曲" bindinput="inputFn" model:value="{{ searchWord }}"	bindconfirm="getSearchList"/>
+    <van-icon name="cross" wx:if="{{ searchWord }}" class="cancel_icon" bindtap="clearInput"/>
+    <van-icon name="search" class="search_icon"/>
+  </view>
+<scroll-view scroll-y="true" class="scroll_box"> 
+  <view class="search_contianer">
+    <view class="search_history" wx:if="{{ searchType == 1 }}">
+      <view class="history_list">
+        <view class="history_title">
+          <view class="title">历史记录</view>
+          <van-icon name="delete" bindtap="delHistory" />
+        </view>
+        <view class="list">
+          <view class="history_item" bindtap="getResultFn" data-searchword="{{ item }}" wx:for="{{ historyList }}" wx:key="index">
+            {{ item }}
+          </view>
+        </view>
+      </view>
+      <view class="hot_list">
+        <view class="title">热搜榜</view>
+        <view class="list">
+          <view class="hot_item" data-searchword="{{ item.searchword }}" bindtap="getResultFn" wx:for="{{ hotList }}" wx:key="index">
+            <view class="item_left">
+              <view class="sort {{ index <=2 ? 'red' : 'gray' }}" wx>{{ index + 1 }}</view>
+              <view class="name">
+                <view class="top">{{ item.searchWord }}</view>
+                <view class="bottom">{{ item.content }}</view>
+              </view>
+            </view>
+            <view class="item_right">{{ item.score }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="search_suggest" wx:elif="{{ searchType == 2 }}">
+      <view class="search_word" data-searchword="{{ searchWord }}" bindtap="getResultFn">搜索”{{ searchWord }}“</view>
+      <view class="suggest_list">
+        <view class="suggest_item" wx:for="{{ searchSuggest }}" wx:key="index" data-searchword="{{ item.keyword }}" bindtap="getResultFn">
+          <van-icon name="search" class="search_icon"/>
+          <view>{{ item.keyword }}</view>
+        </view>
+      </view>
+    </view>
+    <view class="search_result" wx:elif="{{ searchType == 3 }}">
+      <view class="search_item" wx:for="{{ searchResult }}" wx:key="index">
+        <view class="item_left">
+          <view class="song_title">演员</view>
+          <view class="singer">
+            <text class="blue">薛之谦</text>
+            -
+            <text>无数</text>
+          </view>
+        </view>
+        <view class="item_right"></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+</view>

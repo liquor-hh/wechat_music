@@ -1,0 +1,22 @@
+{
+  "name": "wechat_music",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liquor-hh/wechat_music.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liquor-hh/wechat_music/issues"
+  },
+  "homepage": "https://github.com/liquor-hh/wechat_music#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.5"
+  }
+}

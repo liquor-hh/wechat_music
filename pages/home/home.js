@@ -16,7 +16,11 @@ Page({
       this.setData({
         list: res.list
       })
-      console.log(this.data.list);
+    })
+  },
+  goSearch() {
+    wx.navigateTo({
+      url: '/pages/search/search'
     })
   },
   /**
