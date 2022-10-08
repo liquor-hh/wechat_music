@@ -1,5 +1,5 @@
 <view class="container"> 
-  <musichead title="搜索" iconShow="{{ true }}"></musichead>
+  <musichead title="搜索" iconShow="{{ true }}" iconBlack="{{ true }}"></musichead>
   <view class="search_box">
     <input type="text" placeholder="搜索歌曲" bindinput="inputFn" model:value="{{ searchWord }}"	bindconfirm="getSearchList"/>
     <van-icon name="cross" wx:if="{{ searchWord }}" class="cancel_icon" bindtap="clearInput"/>

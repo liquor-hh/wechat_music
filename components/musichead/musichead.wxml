@@ -1,6 +1,8 @@
 <view class="header_container">
-  <view class="icon_box">
-    
+  <view class="'icon_box' {{ iconBlack ? 'black_icon' : 'white_icon' }}" wx:if="{{ iconShow }}">
+    <van-icon name="arrow-left" class="icon"/>
+    |
+    <van-icon name="wap-home-o" class="icon"/>
   </view>
   <view class="header_title">
     {{ title }}

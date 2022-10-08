@@ -17,7 +17,7 @@ Page({
     let searchWord = this.data.searchWord
     let historyList = this.data.historyList
     historyList.unshift(searchWord)
-    wx.setStorageSync('historyList', historyList)
+    searchWord && wx.setStorageSync('historyList', historyList)
     this.setData({
       historyList
     })
