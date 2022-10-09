@@ -10,7 +10,7 @@
   </view>
   <!-- 列表 -->
   <view class="list_box">
-    <view class="list_item" wx:for="{{ list }}" data-id="{{ item.id }}" wx:key="id" bindtap="goSongList">
+    <view class="list_item" wx:for="{{ list }}" wx:key="id" bindtap="goSongList" data-id="{{ item.id }}">
       <view class="img_box">
         <image src="{{ item.coverImgUrl }}"></image>
       </view>
