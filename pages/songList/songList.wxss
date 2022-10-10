@@ -94,3 +94,7 @@ page, .container {
   height: 150rpx;
   z-index: -1;
 }
+.scroll_box {
+  height: 100%;
+  overflow: hidden;
+}

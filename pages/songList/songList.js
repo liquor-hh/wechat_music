@@ -11,7 +11,9 @@ Page({
     description: '',
     name: '',
     songList: [],
-    headerBg: ''
+    headerBg: '',
+    pageIndex: 1,
+    pageSize: 20
   },
   getSongList(id) {
     app.request({
@@ -20,13 +22,32 @@ Page({
         id
       }
     }).then(res => {
+      let start = (this.data.pageIndex - 1) * this.data.pageSize
+      let end = this.data.pageIndex * this.data.pageSize
       this.setData({
         bgUrl: res.playlist.coverImgUrl,
         description: res.playlist.description,
         name: res.playlist.name.slice(3),
-        songList: res.playlist.tracks
+        songList: res.playlist.tracks,
+        songListGroup: res.playlist.tracks.slice(start, end)
       })
       this.canvasFn()
+    })
+  },
+  scrollToLowerFn() {
+    let pageIndex = this.data.pageIndex
+    pageIndex += 1
+    if(pageIndex == 6) {
+      return
+    }
+    this.setData({
+      pageIndex
+    })
+    let start = (this.data.pageIndex - 1) * this.data.pageSize
+    let end = this.data.pageIndex * this.data.pageSize
+    let data = this.data.songList.slice(start, end)
+    this.setData({
+      songListGroup: this.data.songListGroup.concat(data)
     })
   },
   canvasFn() {
@@ -118,6 +139,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: '分享标题',
+      imageUrl: '/static/home.png'
+    }
   }
 })
