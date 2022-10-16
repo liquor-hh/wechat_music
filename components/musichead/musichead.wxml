@@ -1,8 +1,9 @@
 <view class="header_container">
+  <view class="header_bg" style="background-image: url({{headerBg}})"></view>
   <view class="'icon_box' {{ iconBlack ? 'black_icon' : 'white_icon' }}" wx:if="{{ iconShow }}">
-    <van-icon name="arrow-left" class="icon"/>
+    <van-icon name="arrow-left" class="icon" bindtap="goBack"/>
     |
-    <van-icon name="wap-home-o" class="icon"/>
+    <van-icon name="wap-home-o" class="icon" bindtap="goHome"/>
   </view>
   <view class="header_title">
     {{ title }}

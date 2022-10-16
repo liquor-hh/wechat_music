@@ -1,5 +1,6 @@
 .container {
   padding: 0 30rpx;
+  padding-top: 150rpx;
 }
 .container .header {
   text-align: center;

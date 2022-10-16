@@ -23,6 +23,11 @@ Page({
       url: '/pages/search/search'
     })
   },
+  goSongList(e) {
+    wx.navigateTo({
+      url: '/pages/songList/songList?id=' + e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

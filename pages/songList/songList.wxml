@@ -1,0 +1,44 @@
+<!--pages/songList/songList.wxml-->
+<view class="container">
+  <view class="bg_box" style="background-image: url({{bgUrl}})"></view>
+  <canvas type="2d" id="canvas"></canvas>
+  <musichead title="歌单" iconShow="{{ true }}" iconBlack="{{ false }}" headerBg="{{ headerBg }}"></musichead>
+  <scroll-view scroll-y="true" class="scroll_box" bindscrolltolower="scrollToLowerFn">
+    <view class="song_list_head">
+      <view class="head_top">
+        <view class="img_box">
+          <image src="{{ bgUrl }}" alt=""/>
+        </view>
+        <view class="head_content">
+          <view class="title">飙升榜</view>
+          <view class="sub_title">网易云音乐</view>
+          <view class="discribe">云音乐中飙升最快的100首单曲，每日更新<van-icon name="arrow" /></view>
+        </view>
+      </view>
+      <button open-type="share" class="head_bottom">
+        <van-icon name="share-o" />
+        <text>分享给微信好友</text>
+      </button>
+    </view>
+    <view class="song_list_content">
+      <view class="play_all">
+        <van-icon class="icon" name="play-circle-o" />
+        <text>播放全部</text>
+      </view>
+      <view class="song_item" wx:for="{{ songListGroup }}" wx:key="index">
+        <view class="item_left">
+          <view class="sort">{{ index + 1 }}</view>
+          <view class="song_content">
+            <view class="song_title">{{ item.name }}</view>
+            <view class="singer">
+              {{ item.ar[0].name }} - {{ item.al.name }}
+            </view>
+          </view>
+        </view>
+        <view class="item_right">
+        
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
