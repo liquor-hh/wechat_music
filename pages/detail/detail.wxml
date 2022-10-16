@@ -1,0 +1,5 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <musichead title="动态标题占位" iconShow="{{ true }}" iconBlack="{{ false }}">
+  </musichead>
+</view>
