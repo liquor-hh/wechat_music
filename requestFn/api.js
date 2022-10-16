@@ -9,6 +9,13 @@ const API = {
     searchHot: '/search/hot/detail',
     searchWord: '/search',
     searchSuggest: '/search/suggest'
+  },
+  detail: {
+    songDetail: '/song/detail',
+    songLyric: '/lyric',
+    songSimi: '/simi/song',
+    songComment: '/comment/music',
+    songUrl: '/song/url'
   }
 }
 module.exports = API

@@ -1,1 +1,77 @@
 /* pages/detail/detail.wxss */
+page, .container {
+  width: 100%;
+  height: 100%;
+}
+.detail-container {
+  position: relative;
+  padding-top: 150rpx;
+}
+.pointer {
+  position: absolute;
+  width: 200rpx;
+  height: 340rpx;
+  left: 46%;
+  top: 0;
+  z-index: 99;
+}
+.circle {
+  position: absolute;
+  width: 580rpx;
+  height: 580rpx;
+  left: 85rpx;
+  top: 200rpx;
+  animation: move 10s linear infinite;
+  animation-play-state: paused;
+}
+.song_img {
+  position: absolute;
+  width: 404rpx;
+  height: 404rpx;
+  left: 50%;
+  left: 173rpx;
+  top: 290rpx;
+  border-radius: 50%;
+  animation: move 10s linear infinite;
+  animation-play-state: paused;
+}
+.circle.play, .song_img.play {
+  animation-play-state: running;
+}
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.fixBg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.play-icon {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  left: 50%;
+  top: 440rpx;
+  transform: translateX(-50%);
+  font-size: 150rpx;
+}
+.lyric-container {
+  margin-top: 820rpx;
+  height: 240rpx;
+  overflow: hidden;
+  line-height: 80rpx;
+  text-align: center;
+  color: #676767;
+}
+.lyric-container .highlight {
+  color: #fff;
+}

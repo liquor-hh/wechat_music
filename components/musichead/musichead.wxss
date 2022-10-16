@@ -7,10 +7,15 @@
   z-index: 99;
 }
 .header_container .header_title {
+  width: 280rpx;
   position: absolute;
   left: 50%;
   top: 55rpx;
   transform: translateX(-50%);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
 }
 .icon_box {
   display: flex;

@@ -1,5 +1,26 @@
 <!--pages/detail/detail.wxml-->
 <view class="container">
-  <musichead title="动态标题占位" iconShow="{{ true }}" iconBlack="{{ false }}">
+  <musichead title="{{songTitle}}" iconShow="{{ true }}" iconBlack="{{ false }}">
   </musichead>
+  <view class="fixBg" style="background: url({{songBgUrl}}) no-repeat"></view>
+  <view class="detail-container">
+    <scroll-view class="scroll-box" scroll-y="true">
+    <image class="pointer" src="/static/zhizhen.jpg"></image>
+      <view class="detail-play">
+        <!-- 黑色圆背景 -->
+        <image class="circle {{ musicPlay ? 'play' : '' }}" src="/static/circle.jpg"></image>
+        <!-- 歌曲图片 -->
+        <image class="song_img {{ musicPlay ? 'play' : '' }}" src="{{ songBgUrl }}"></image>
+        <!-- 播放或暂停的图标， name是动态的 -->
+        <van-icon bindtap="controlMusicPlay" class="play-icon" color="#fff" name="{{ iconName }}" />
+      </view>
+      <view class="lyric-container">
+        <view class="lyric-wrapper" style="transform: translateY({{ (-(lyricIndex == 0 ? -1 : lyricIndex - 1) * 80) + 'rpx' }})">
+          <view class="lyric-item {{ lyricIndex == index ? 'highlight' : '' }}" wx:for="{{ lyricResult }}" wx:key="index">
+            {{ item.lyricItem }}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
 </view>

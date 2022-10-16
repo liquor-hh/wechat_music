@@ -15,6 +15,11 @@ Page({
     pageIndex: 1,
     pageSize: 20
   },
+  goDetail(e) {
+    wx.navigateTo({
+      url: '/pages/detail/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
   getSongList(id) {
     app.request({
       url: API.list.getSongList,

@@ -25,7 +25,7 @@
         <van-icon class="icon" name="play-circle-o" />
         <text>播放全部</text>
       </view>
-      <view class="song_item" wx:for="{{ songListGroup }}" wx:key="index">
+      <view class="song_item" data-id="{{ item.id }}" bindtap="goDetail" wx:for="{{ songListGroup }}" wx:key="index">
         <view class="item_left">
           <view class="sort">{{ index + 1 }}</view>
           <view class="song_content">
@@ -36,7 +36,7 @@
           </view>
         </view>
         <view class="item_right">
-        
+          <van-icon name="play-circle-o" />
         </view>
       </view>
     </view>

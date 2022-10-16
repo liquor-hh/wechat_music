@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/search/search",
+    "pages/songList/songList",
     "pages/detail/detail",
-    "pages/songList/songList"
+    "pages/search/search"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
